@@ -7,10 +7,59 @@
                 <argument name="bundles" xsi:type="array">
                     <item name="default" xsi:type="array">
                         <item name="items" xsi:type="array">
+                            <!-- Magento_DataServices -->
+                            <item name="dataServicesBase" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/ds-base</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="magento-storefront-events" xsi:type="string">magentoStorefrontEvents</item>
+                                    <item name="data-services-base" xsi:type="string">https://commerce.adobedtm.com/v6/ds.min</item>
+                                </item>
+                                <item name="load" xsi:type="array">
+                                    <item name="onRequire" xsi:type="boolean">true</item>
+                                </item>
+                            </item>
                             <item name="magentoStorefrontEvents" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/storefront-events</item>
                                 <item name="import" xsi:type="array">
                                     <item name="magento-storefront-events-sdk" xsi:type="string">https://unpkg.com/@adobe/magento-storefront-events-sdk@^1/dist/index</item>
+                                </item>
+                                <item name="load" xsi:type="array">
+                                    <item name="onRequire" xsi:type="boolean">true</item>
+                                </item>
+                            </item>
+                            <item name="magentoStorefrontEventCollector" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/storefront-event-collector</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="magento-storefront-event-collector" xsi:type="string">https://unpkg.com/@adobe/magento-storefront-event-collector@^1/dist/index</item>
+                                </item>
+                                <item name="load" xsi:type="array">
+                                    <item name="onRequire" xsi:type="boolean">true</item>
+                                </item>
+                            </item>
+
+                            <!-- Magento_ProductRecommendationsLayout -->
+                            <item name="Magento_ProductRecommendationsLayout/js/recsFetcher" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/product-recommendations/recsFetcher</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="dataServicesBase" xsi:type="string">dataServicesBase</item>
+                                    <item name="magentoStorefrontEvents" xsi:type="string">magentoStorefrontEvents</item>
+                                    <item name="recsFetcher-deps" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/product-recommendations/recsFetcher-deps</item>
+                                    <item name="recommendationsSDK" xsi:type="string">https://commerce.adobedtm.com/recommendations/events/v1/recommendationsEvents.min.js</item>
+                                    <item name="recommendationsEvents" xsi:type="string">https://magento-recs-sdk.adobe.net/v2/index</item>
+                                    <item name="recsFetcher" xsi:type="string">Magento_ProductRecommendationsLayout/js/recsFetcher</item>
+                                </item>
+                                <item name="load" xsi:type="array">
+                                    <item name="onRequire" xsi:type="boolean">true</item>
+                                </item>
+                            </item>
+                            <item name="Magento_ProductRecommendationsLayout/js/layoutRenderer" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/product-recommendations/layoutRenderer</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="dataServicesBase" xsi:type="string">dataServicesBase</item>
+                                    <item name="recsFetcher" xsi:type="string">Magento_ProductRecommendationsLayout/js/recsFetcher</item>
+                                    <item name="abstractRenderer" xsi:type="string">Magento_ProductRecommendationsLayout/js/abstractRenderer</item>
+                                    <item name="abstractRenderer-register" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/product-recommendations/abstractRenderer</item>
+                                    <item name="layoutRenderer" xsi:type="string">Magento_ProductRecommendationsLayout/js/layoutRenderer</item>
                                 </item>
                                 <item name="load" xsi:type="array">
                                     <item name="onRequire" xsi:type="boolean">true</item>
@@ -21,5 +70,9 @@
                 </argument>
             </arguments>
         </referenceBlock>
+
+        <referenceContainer name="breeze.container">
+            <block class="Swissup\Breeze\Block\HtmlTemplate" name="breeze.Magento_ProductRecommendationsLayout_recommendations_html" template="Swissup_BreezeMagentoEnterprise::product-recommendations/recommendations.html"/>
+        </referenceContainer>
     </body>
 </page>
