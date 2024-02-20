@@ -3,7 +3,7 @@
     <div class="block widget block-products-list grid">
         <div class="block-content">
             <div class="products wrapper grid products-grid">
-                <div each="data: recs(), afterRender: loadJsAfterKoRender">
+                <div data-bind="foreach: { data: recs(), afterRender: loadJsAfterKoRender }">
                     <div data-bind="attr : {'data-unit-id' : unitId }">
                         <!-- ko if: products.length -->
                         <div class="block-title title">
@@ -13,15 +13,15 @@
                         </div>
                         <!-- /ko -->
 
-                        <ol class="products list items product-items" each="products">
-                            <li class="item product product-item" data-bind='style: {padding: "15px"}'>
+                        <ol class="products list items product-items" data-bind="foreach: products">
+                            <li class="item product product-item">
                                 <div class="product-item-info" data-container="product-grid">
                                     <!-- ko if: $parents[1].isAlternateEnvironmentEnabled -->
                                     <a tabindex="-1"
                                        class="product photo product-item-photo"
                                        data-bind="attr : {'data-sku' : sku, 'data-unit-id' : $parent.unitId, href: 'javascript:void(0);' }"
                                     >
-                                        <img attr="src: image.url" data-bind='style: {maxHeight: "15em"}'/>
+                                        <img data-bind="attr: {src: image.url}"/>
                                     </a>
                                     <!-- /ko -->
 
@@ -31,7 +31,7 @@
                                        class="product photo product-item-photo"
                                        data-bind="attr : {'data-sku' : sku, 'data-unit-id' : $parent.unitId, href: url }"
                                     >
-                                        <img attr="src: image.url" data-bind='style: {maxHeight: "15em"}'/>
+                                        <img data-bind="attr: {src: image.url}"/>
                                     </a>
                                     <!-- /ko -->
 
@@ -40,7 +40,7 @@
                                        class="product photo product-item-photo"
                                        data-bind="attr : {'data-sku' : sku, 'data-unit-id' : $parent.unitId, href: url }"
                                     >
-                                        <img attr="src: $parents[1].placeholderUrl" data-bind='style: {maxHeight: "15em"}'/>
+                                        <img attr="src: " data-bind='attr: {src: $parents[1].placeholderUrl}'/>
                                     </a>
                                     <!-- /ko -->
                                     <!-- /ko -->
@@ -86,23 +86,23 @@
                                                 <div class="actions-primary">
                                                     <form
                                                             data-role="tocart-form"
-                                                            attr="action: addToCart.url"
+                                                            data-bind="attr : {action: addToCart.url}"
                                                             method="post"
                                                     >
                                                         <input
                                                                 type="hidden"
                                                                 name="product"
-                                                                attr="value: productId"
+                                                                data-bind="attr : {value: productId}"
                                                         >
                                                         <input
                                                                 type="hidden"
                                                                 name="uenc"
-                                                                attr="value: addToCart.postUenc"
+                                                                data-bind="attr : {value: addToCart.postUenc}"
                                                         >
                                                         <input
                                                                 type="hidden"
                                                                 name="form_key"
-                                                                attr="value: addToCart.form_key"
+                                                                data-bind="attr : {value: addToCart.form_key}"
                                                         >
                                                         <button
                                                                 type="submit"

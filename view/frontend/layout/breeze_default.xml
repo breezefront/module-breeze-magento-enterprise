@@ -65,6 +65,18 @@
                                     <item name="onRequire" xsi:type="boolean">true</item>
                                 </item>
                             </item>
+                            <item name="Magento_PageBuilderProductRecommendations/js/pageBuilderRenderer" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/product-recommendations/pageBuilderRenderer</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="recsFetcher" xsi:type="string">Magento_ProductRecommendationsLayout/js/recsFetcher</item>
+                                    <item name="abstractRenderer" xsi:type="string">Magento_ProductRecommendationsLayout/js/abstractRenderer</item>
+                                    <item name="abstractRenderer-register" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/product-recommendations/abstractRenderer</item>
+                                    <item name="pageBuilderRenderer" xsi:type="string">Magento_PageBuilderProductRecommendations/js/pageBuilderRenderer</item>
+                                </item>
+                                <item name="load" xsi:type="array">
+                                    <item name="onRequire" xsi:type="boolean">true</item>
+                                </item>
+                            </item>
                         </item>
                     </item>
                 </argument>
