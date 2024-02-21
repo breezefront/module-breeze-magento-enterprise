@@ -1,0 +1,36 @@
+& when (@critical) {
+    .block.block-category-event {
+        padding: @3 0;
+        text-align: center;
+        .block-title {
+            .lib-css(font-size, @catalog-event-title__font-size);
+            .lib-css(line-height, @catalog-event-title__line-height);
+        }
+        .dates {
+            display: flex;
+            justify-content: center;
+            gap: @8;
+            > div {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .date,
+        .start::after {
+            .lib-css(font-size, @catalog-event-date__font-size);
+            .lib-css(line-height, @catalog-event-date__line-height);
+        }
+        .time {
+            .lib-css(font-size, @catalog-event-time__font-size);
+            .lib-css(line-height, @catalog-event-time__line-height);
+        }
+        .start {
+            position: relative;
+            &::after {
+                position: absolute;
+                right: -@6;
+                content: '–';
+            }
+        }
+    }
+}
