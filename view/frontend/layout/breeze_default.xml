@@ -54,6 +54,36 @@
                                     <item name="magento-storefront-event-collector" xsi:type="string">https://unpkg.com/@adobe/magento-storefront-event-collector@^1/dist/index</item>
                                 </item>
                                 <item name="load" xsi:type="array">
+                                    <item name="onInteraction" xsi:type="boolean">true</item>
+                                </item>
+                            </item>
+
+                            <!-- Magento_MultipleWishlist -->
+                            <item name="Magento_MultipleWishlist/js/view/multiple-wishlist" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/multiple-wishlist/wishlist-view</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="deps" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/multiple-wishlist/wishlist-deps</item>
+                                    <item name="parent" xsi:type="string">Magento_MultipleWishlist/js/view/multiple-wishlist</item>
+                                </item>
+                                <item name="load" xsi:type="array">
+                                    <item name="onRequire" xsi:type="boolean">true</item>
+                                </item>
+                            </item>
+                            <item name="multipleWishlist" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/multiple-wishlist/wishlist-widget</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="parent" xsi:type="string">Magento_MultipleWishlist/js/multiple-wishlist</item>
+                                </item>
+                                <item name="load" xsi:type="array">
+                                    <item name="onRequire" xsi:type="boolean">true</item>
+                                </item>
+                            </item>
+                            <item name="Magento_MultipleWishlist/js/select-all-change" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/multiple-wishlist/select-all-change</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="parent" xsi:type="string">Magento_MultipleWishlist/js/select-all-change</item>
+                                </item>
+                                <item name="load" xsi:type="array">
                                     <item name="onRequire" xsi:type="boolean">true</item>
                                 </item>
                             </item>
@@ -64,7 +94,6 @@
                                 <item name="import" xsi:type="array">
                                     <item name="dataServicesBase" xsi:type="string">dataServicesBase</item>
                                     <item name="magentoStorefrontEvents" xsi:type="string">magentoStorefrontEvents</item>
-                                    <item name="recsFetcher-deps" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/product-recommendations/recsFetcher-deps</item>
                                     <item name="recommendationsSDK" xsi:type="string">https://commerce.adobedtm.com/recommendations/events/v1/recommendationsEvents.min.js</item>
                                     <item name="recommendationsEvents" xsi:type="string">https://magento-recs-sdk.adobe.net/v2/index</item>
                                     <item name="recsFetcher" xsi:type="string">Magento_ProductRecommendationsLayout/js/recsFetcher</item>
@@ -103,6 +132,8 @@
                 </argument>
             </arguments>
         </referenceBlock>
+
+        <move element="multiple-wishlist_sidebar" destination="header.wishlist"/>
 
         <referenceContainer name="breeze.container">
             <block class="Swissup\Breeze\Block\HtmlTemplate" name="breeze.Magento_ProductRecommendationsLayout_recommendations_html" template="Swissup_BreezeMagentoEnterprise::product-recommendations/recommendations.html"/>
