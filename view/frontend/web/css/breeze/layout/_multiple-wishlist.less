@@ -119,6 +119,15 @@
     }
 }
 
+// Shopping Cart
+& when (@critical) {
+    .cart.table-wrapper {
+        .split.wishlist button {
+            &:extend(.breeze-button-reset all);
+        }
+    }
+}
+
 // Wishlist management page
 .block-wishlist-management {
     .wishlist-name {
