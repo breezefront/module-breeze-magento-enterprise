@@ -9,6 +9,7 @@ class BreezeDataHelper
         array $result
     ) {
         $result[] = 'checkout/cart/configureFailed';
+        $result[] = 'magento/advancedcheckout/sku/index';
 
         return $result;
     }
