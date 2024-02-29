@@ -1,0 +1,22 @@
+& when (@critical) {
+    .block-reward-info {
+        .reward-rates {
+            margin-top: @2;
+        }
+    }
+    .reward-settings {
+        .legend {
+            &:extend(.breeze-block-account-title);
+            & when not (@account-block-title__border) {
+                border: 0;
+            }
+            + :not(br),
+            + br + * {
+               margin-top: @4;
+            }
+        }
+        .field {
+            padding-left: @4;
+        }
+    }
+}
