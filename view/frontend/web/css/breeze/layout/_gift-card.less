@@ -1,0 +1,31 @@
+& when (@critical) {
+    .storecredit {
+        a {
+            &:extend(.breeze-link all);
+            display: inline-block;
+        }
+    }
+    .giftcard {
+        .cart-container & {
+            .label {
+                &:extend(.breeze-sr-only);
+            }
+        }
+    }
+    .form-giftcard-redeem {
+        max-width: 500px;
+    }
+}
+
+& when not (@critical) {
+    .giftcard {
+        &.info {
+            margin-bottom: @2;
+        }
+    }
+    .customerbalance {
+        .payment-option-content {
+            display: block;
+        }
+    }
+}

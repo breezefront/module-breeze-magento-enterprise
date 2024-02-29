@@ -74,6 +74,16 @@
                                 </item>
                             </item>
 
+                            <!-- Magento_GiftCardAccount -->
+                            <item name="giftCard" xsi:type="array">
+                                <item name="path" xsi:type="string">Magento_GiftCardAccount/js/gift-card</item>
+                                <item name="load" xsi:type="array">
+                                    <item name="onReveal" xsi:type="array">
+                                        <item name="0" xsi:type="string">[data-mage-init*="giftCard"]</item>
+                                    </item>
+                                </item>
+                            </item>
+
                             <!-- Magento_MultipleWishlist -->
                             <item name="Magento_MultipleWishlist/js/view/multiple-wishlist" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/multiple-wishlist/wishlist-view</item>
@@ -145,6 +155,19 @@
                             </item>
                         </item>
                     </item>
+                    <item name="checkout" xsi:type="array">
+                        <item name="items" xsi:type="array">
+                            <item name="Magento_GiftCardAccount/js/view/cart/totals/gift-card-account" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/gift-card/gift-card-account-total</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="totals" xsi:type="string">Swissup_Breeze/js/components/cart/totals</item>
+                                    <item name="parent" xsi:type="string">Magento_GiftCardAccount/js/view/summary/gift-card-account</item>
+                                    <item name="parent-register" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/gift-card/gift-card-account-summary</item>
+                                    <item name="component" xsi:type="string">Magento_GiftCardAccount/js/view/cart/totals/gift-card-account</item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
                 </argument>
             </arguments>
         </referenceBlock>
@@ -153,6 +176,7 @@
 
         <referenceContainer name="breeze.container">
             <block class="Swissup\Breeze\Block\HtmlTemplate" name="breeze.Magento_ProductRecommendationsLayout_recommendations_html" template="Swissup_BreezeMagentoEnterprise::product-recommendations/recommendations.html"/>
+            <block class="Swissup\Breeze\Block\HtmlTemplate" template="Magento_GiftCardAccount::cart/totals/gift-card-account.html"/>
         </referenceContainer>
     </body>
 </page>
