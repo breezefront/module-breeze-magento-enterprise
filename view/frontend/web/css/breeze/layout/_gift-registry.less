@@ -1,0 +1,86 @@
+.giftregisty-dropdown {
+    > .action {
+        &::after {
+            &:extend(.breeze-dropdown-toggler-icon all);
+        }
+        &.active::after {
+            &:extend(.breeze-dropdown-toggler-icon-active all);
+        }
+    }
+
+    .items {
+        &:extend(.breeze-dropdown all);
+        li {
+            &:extend(.breeze-dropdown-item all);
+        }
+    }
+    &.active .items {
+        &:extend(.breeze-dropdown-visible all);
+    }
+}
+
+& when (@critical) {
+    .giftregisty-dropdown {
+        > .action {
+            display: flex;
+            align-items: center;
+        }
+        .items {
+            --dropdown-width: @52;
+        }
+    }
+    .form-giftregistry-edit,
+    .form-giftregistry-create {
+        &:extend(.abs-form-field__media-sm__column-2 all);
+    }
+    #registrant-container {
+        &:extend(.abs-form-row-builder all);
+    }
+    .form-giftregistry-create {
+        .legend {
+            display: none;
+        }
+    }
+    .giftregistry-type {
+        margin-bottom: @2;
+    }
+
+    .table-giftregistry-items {
+        a {
+            &:extend(.breeze-link all);
+        }
+        .col.product {
+            position: relative;
+            .padding-left(50px);
+            .product-image {
+                position: absolute;
+                width: 40px;
+                .left(3px);
+            }
+        }
+    }
+
+    .cart-container .checkout-methods-items {
+        li:has(.giftregistry) {
+            justify-content: flex-start;
+        }
+        .giftregistry {
+            width: 100%;
+            .fieldset {
+                display: flex;
+                gap: @2;
+                @media @media-lg-down {
+                    flex-direction: column;
+                }
+            }
+            .action.primary {
+                &:extend(.breeze-button-secondary all);
+                margin: 0;
+                font-size: @font-size__base;
+                font-weight: @button__font-weight;
+                line-height: @line-height__base;
+                padding: @button__padding;
+            }
+        }
+    }
+}
