@@ -10,12 +10,12 @@
 .split.wishlist,
 .form-wishlist-items .wishlist-dropdown {
     .items {
-        .breeze-dropdown();
+        &:extend(.breeze-dropdown all);
         &[aria-hidden="false"] {
-            .breeze-dropdown-visible();
+            &:extend(.breeze-dropdown-visible all);
         }
         li > span {
-            .breeze-dropdown-item();
+            &:extend(.breeze-dropdown-item all);
         }
     }
     .action.new::before {
@@ -25,10 +25,10 @@
 .split.wishlist {
     .action.change {
         &::before {
-            .breeze-dropdown-toggler-icon();
+            &:extend(.breeze-dropdown-toggler-icon all);
         }
         &.active::before {
-            .breeze-dropdown-toggler-icon-active();
+            &:extend(.breeze-dropdown-toggler-icon-active all);
         }
     }
 }
@@ -69,8 +69,8 @@
     .form-wishlist-items .wishlist-dropdown {
         .items {
             --dropdown-width: @52;
-            &[aria-hidden="false"] {
-                top: 100%;
+            &[aria-hidden="false"]:not([style*="top:"]) {
+                top: 100% !important;
             }
             li > span {
                 --muted-alpha: 1;
@@ -132,20 +132,20 @@
 .block-wishlist-management {
     .wishlist-name {
         &::after {
-            .breeze-dropdown-toggler-icon();
+            &:extend(.breeze-dropdown-toggler-icon all);
         }
         &.active::after {
-            .breeze-dropdown-toggler-icon-active();
+            &:extend(.breeze-dropdown-toggler-icon-active all);
         }
     }
 }
 .form-wishlist-items .wishlist-dropdown {
     > .action {
         &::after {
-            .breeze-dropdown-toggler-icon();
+            &:extend(.breeze-dropdown-toggler-icon all);
         }
         &.active::after {
-            .breeze-dropdown-toggler-icon-active();
+            &:extend(.breeze-dropdown-toggler-icon-active all);
         }
     }
 }
