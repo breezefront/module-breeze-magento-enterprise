@@ -6,6 +6,9 @@
 
 & when (@critical) {
     .block-addbysku {
+        a {
+            &:extend(.breeze-link all);
+        }
         .block-content {
             padding: 0;
         }
@@ -35,6 +38,9 @@
         }
         .field.sku {
             flex-grow: 1;
+        }
+        input.qty {
+            min-width: 60px;
         }
         .box-items {
             > .fieldset {
