@@ -69,7 +69,7 @@
     .form-wishlist-items .wishlist-dropdown {
         .items {
             --dropdown-width: @52;
-            &[aria-hidden="false"]:not([style*="top:"]) {
+            &[aria-hidden="false"]:not([style*="top:"]):not([style*="inset:"]) {
                 top: 100% !important;
             }
             li > span {
