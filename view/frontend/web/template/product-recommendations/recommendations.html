@@ -40,7 +40,7 @@
                                        class="product photo product-item-photo"
                                        data-bind="attr : {'data-sku' : sku, 'data-unit-id' : $parent.unitId, href: url }"
                                     >
-                                        <img attr="src: " data-bind='attr: {src: $parents[1].placeholderUrl}'/>
+                                        <img data-bind='attr: {src: $parents[1].placeholderUrl}'/>
                                     </a>
                                     <!-- /ko -->
                                     <!-- /ko -->
@@ -50,7 +50,7 @@
                                             <a class="product-item-link"
                                                data-bind="attr : {'data-sku' : sku, 'data-unit-id' : $parent.unitId, href: 'javascript:void(0);' }"
                                             >
-                                                <span html="name"></span>
+                                                <span data-bind="html : name"></span>
                                             </a>
                                         </strong>
                                         <!-- /ko -->
@@ -60,7 +60,7 @@
                                             <a class="product-item-link"
                                                data-bind="attr : {'data-sku' : sku, 'data-unit-id' : $parent.unitId, href: url }"
                                             >
-                                                <span html="name"></span>
+                                                <span data-bind="html : name"></span>
                                             </a>
                                         </strong>
                                         <!-- /ko -->
