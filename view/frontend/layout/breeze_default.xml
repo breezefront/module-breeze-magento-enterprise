@@ -97,6 +97,20 @@
                                 </item>
                             </item>
 
+                            <!-- Magento_GiftWrapping -->
+                            <!-- <item name="Magento_GiftWrapping/js/view/gift-wrapping" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/gift-wrapping/gift-wrapping-view</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="gift-wrapping-collection" xsi:type="string">Magento_GiftWrapping/js/model/gift-wrapping-collection</item>
+                                    <item name="gift-wrapping-model" xsi:type="string">Magento_GiftWrapping/js/model/gift-wrapping</item>
+                                    <item name="gift-wrapping-deps" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/gift-wrapping/gift-wrapping-deps</item>
+                                    <item name="gift-wrapping" xsi:type="string">Magento_GiftWrapping/js/view/gift-wrapping</item>
+                                </item>
+                                <item name="load" xsi:type="array">
+                                    <item name="onRequire" xsi:type="boolean">true</item>
+                                </item>
+                            </item> -->
+
                             <!-- Magento_MultipleWishlist -->
                             <item name="Magento_MultipleWishlist/js/view/multiple-wishlist" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeMagentoEnterprise/js/multiple-wishlist/wishlist-view</item>
