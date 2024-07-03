@@ -2,7 +2,7 @@
     "name": "swissup/module-breeze-magento-enterprise",
     "description": "Breeze integration with Adobe Commerce",
     "type": "magento2-module",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "license": "OSL-3.0",
     "require": {
         "swissup/module-breeze": "^2.14.3"
